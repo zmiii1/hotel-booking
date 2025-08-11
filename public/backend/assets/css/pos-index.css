@@ -1,0 +1,312 @@
+/* POS System Styling */
+:root {
+    --pink-primary: #e91e63;
+    --pink-dark: #c2185b;
+    --pink-light: #f8bbd9;
+    --pink-gradient: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    --pink-gradient-light: linear-gradient(135deg, #f06292 0%, #f8bbd9 100%);
+}
+
+.text-pink {
+    color: var(--pink-primary) !important;
+}
+
+.page-content {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Header Card */
+.pos-header-card {
+    background: var(--pink-gradient);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Card Headers */
+.pos-card-header {
+    background: var(--pink-gradient);
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px 12px 0 0;
+}
+
+.pos-products-card,
+.pos-cart-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Navigation Pills */
+.pos-nav-pills .nav-link {
+    color: var(--pink-primary);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    background: rgba(233, 30, 99, 0.1);
+}
+
+.pos-nav-pills .nav-link:hover {
+    color: var(--pink-dark);
+    background: rgba(233, 30, 99, 0.2);
+    transform: translateY(-2px);
+}
+
+.pos-nav-pills .nav-link.active {
+    background: var(--pink-gradient);
+    color: white;
+    border-color: var(--pink-primary);
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+/* Section Titles */
+.section-title {
+    border-bottom: 2px solid var(--pink-light);
+    padding-bottom: 0.5rem;
+}
+
+/* Ticket Cards */
+.ticket-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.15);
+    border-color: var(--pink-light);
+}
+
+.ticket-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+}
+
+.ticket-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ticket-card:hover .ticket-image {
+    transform: scale(1.05);
+}
+
+.ticket-name {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    height: 2.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.ticket-price {
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn-pink {
+    background: var(--pink-gradient);
+    border: none;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+    background: var(--pink-gradient-light);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+.btn-outline-pink {
+    border: 2px solid var(--pink-primary);
+    color: var(--pink-primary);
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-pink:hover {
+    background: var(--pink-primary);
+    border-color: var(--pink-primary);
+    color: white;
+}
+
+/* Cart Section */
+.cart-section {
+    min-height: 200px;
+}
+
+.empty-cart-icon i {
+    font-size: 4rem;
+    color: #dee2e6;
+}
+
+.cart-summary-card {
+    background: rgba(233, 30, 99, 0.05);
+    border: 1px solid var(--pink-light);
+    border-radius: 10px;
+}
+
+.cart-item {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+    background: rgba(233, 30, 99, 0.05);
+    border-color: var(--pink-primary);
+    box-shadow: 0 2px 8px rgba(233, 30, 99, 0.1);
+}
+
+/* Customer and Payment Sections */
+.customer-section,
+.payment-section {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Form Controls */
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--pink-primary);
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.25);
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--pink-light);
+}
+
+/* Empty States */
+.empty-state {
+    padding: 3rem 1rem;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    color: #dee2e6;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .col-lg-4 {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        padding: 1rem;
+    }
+    
+    .pos-nav-pills .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .ticket-card {
+        margin-bottom: 1rem;
+    }
+    
+    .row .col-6 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .pos-header-card .row {
+        text-align: center;
+    }
+    
+    .pos-header-card .col-md-4 {
+        margin-top: 1rem;
+    }
+    
+    .ticket-image-container {
+        height: 140px;
+    }
+    
+    .pos-nav-pills {
+        flex-direction: column;
+    }
+    
+    .pos-nav-pills .nav-item {
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .page-breadcrumb,
+    .pos-header-card,
+    .action-buttons {
+        display: none;
+    }
+}
+
+/* Loading States */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Custom Scrollbar */
+.card-body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--pink-light) transparent;
+}
+
+.card-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+    background: var(--pink-light);
+    border-radius: 3px;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+    background: var(--pink-primary);
+}

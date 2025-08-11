@@ -1,0 +1,1047 @@
+.booking-step {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    color: #666;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.step-number.completed {
+    background-color: #4caf50;
+    color: white;
+}
+
+.step-number.active {
+    background-color: #e75788;
+    color: white;
+}
+
+.step-text {
+    font-size: 14px;
+    color: #666;
+    margin-right: 8px;
+}
+
+.step-separator {
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0 8px;
+}
+
+.top-bar {
+    background: #f5f5f7;
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e5e7;
+}
+
+.booking-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.control-label {
+    font-size: 12px;
+    color: #8e8e93;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.control-input {
+    border: 1px solid #d1d1d6;
+    border-radius: 6px;
+    padding: 10px 12px;
+    background: white;
+    font-size: 14px;
+    color: #1d1d1f;
+    min-width: 160px;
+}
+
+.control-input:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.date-input {
+    min-width: 200px;
+}
+
+.top-nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #8e8e93;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-item:hover {
+    color: #007aff;
+}
+
+.flag-icon {
+    width: 20px;
+    height: 15px;
+    background: linear-gradient(to bottom, #dc1c6c 33%, #ffffff 33%, #ffffff 66%, #0000ff 66%);
+    border-radius: 2px;
+}
+
+.main-content {
+    background-color: #f5f7fa;
+    min-height: calc(100vh - 80px);
+}
+
+.navigation-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    color: #e75788;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-btn i {
+    margin-right: 8px;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-right: 8rem;
+}
+
+.booking-step {
+    display: flex;
+    align-items: center;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    color: #666;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.step-number.completed {
+    background-color: #4caf50;
+    color: white;
+}
+
+.step-number.active {
+    background-color: #e75788;
+    color: white;
+}
+
+.step-text {
+    font-size: 14px;
+    color: #666;
+    margin-right: 8px;
+}
+
+.step-separator {
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0 8px;
+}
+
+.divider {
+    height: 4px;
+    background-color: #e75788;
+}
+
+/* Form Sections */
+.form-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.booking-option {
+    margin-bottom: 16px;
+}
+
+.booking-note {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.login-option {
+    margin-bottom: 24px;
+    position: relative;
+    text-align: center;
+}
+
+.btn-google-auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-google-auth:hover {
+    background-color: #f9f9f9;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+.or-divider {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 16px 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.or-divider::before {
+    left: 0;
+}
+
+.or-divider::after {
+    right: 0;
+}
+
+.privacy-notice {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.text-link {
+    color: #e75788;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border-color: #ced4da;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    line-height: 1.5;
+    height: auto; /* biarkan otomatis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-color: #ced4da;
+    border-radius: 0.375rem;
+}
+
+.input-group-text {
+    height: var(--bs-height);
+}
+
+.input-group .form-control,
+.input-group-text {
+    height: calc(2.375rem + 2px); /* Bootstrap default form-control height */
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.375rem;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn-complete-booking {
+    width: 100%;
+    padding: 14px;
+    background-color: #e75788;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-complete-booking:hover {
+    background-color: #DC1C6C;
+}
+
+.payment-notice {
+    margin-bottom: 24px;
+}
+
+/* Tambahkan CSS ini ke file booking_details.css atau tambahkan ke dalam tag <style> pada view */
+
+/* Pesan Error Global */
+.alert-danger {
+    border-left: 4px solid #dc3545;
+    background-color: rgba(220, 53, 69, 0.05);
+    color: #721c24;
+}
+
+.alert-danger ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+/* CSS untuk Popup Error */
+.error-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.error-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.error-popup-content {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    animation: pop-in 0.3s ease forwards;
+}
+
+.error-popup.show .error-popup-content {
+    transform: scale(1);
+}
+
+.error-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.error-popup-header h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.error-popup-header i {
+    color: #fff;
+    margin-right: 8px;
+}
+
+.error-popup-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.error-popup-close:hover {
+    transform: scale(1.1);
+}
+
+.error-popup-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.error-popup-footer {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #e9ecef;
+}
+
+.error-popup-dismiss {
+    padding: 8px 16px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.error-popup-dismiss:hover {
+    background-color: #5a6268;
+}
+
+.error-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.error-list li {
+    padding: 8px 0;
+    color: #dc3545;
+    border-bottom: 1px solid #f8d7da;
+    position: relative;
+    padding-left: 28px;
+}
+
+.error-list li:last-child {
+    border-bottom: none;
+}
+
+.error-list li::before {
+    content: "\f071"; /* FontAwesome exclamation triangle */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+}
+
+/* Animation untuk shake effect pada field error */
+.shake-error {
+    animation: shake 0.6s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+    20%, 40%, 60%, 80% {transform: translateX(5px);}
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* CSS khusus untuk fields yang mengalami validasi */
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #dc3545;
+}
+
+.form-control.is-invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* CSS untuk tooltip */
+.tooltip-icon {
+    display: inline-block;
+    margin-left: 5px;
+    color: #6c757d;
+    cursor: help;
+}
+
+.tooltip-icon:hover {
+    color: #0d6efd;
+}
+
+.tooltip-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    font-size: 0.875rem;
+    color: #212529;
+}
+
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip-container:hover .tooltip-content {
+    display: block;
+}
+
+
+/* Validasi Form */
+.invalid-feedback {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #dc3545;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid,
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.input-group .form-control.is-invalid {
+    z-index: 2;
+}
+
+.input-group .form-control.is-invalid:focus {
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+/* Asterisk untuk field wajib */
+.form-label .text-danger {
+    font-weight: bold;
+}
+
+/* Error shake animation */
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+    20%, 40%, 60%, 80% {transform: translateX(5px);}
+}
+
+.form-control.is-invalid.shake,
+.form-select.is-invalid.shake,
+.input-group.shake .form-control.is-invalid {
+    animation: shake 0.6s ease-in-out;
+}
+
+/* Styling khusus untuk error message */
+#form-error-message {
+    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Hover state pada tombol booking */
+.btn-complete-booking {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-complete-booking:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-complete-booking:hover:before {
+    left: 100%;
+}
+
+.btn-complete-booking:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Styling tambahan untuk input fields */
+.form-control:focus, 
+.form-select:focus {
+    border-color: #6c757d;
+    box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.25);
+}
+
+/* Tooltip styling untuk bantuan */
+.tooltip-info {
+    color: #6c757d;
+    cursor: help;
+    margin-left: 5px;
+}
+
+.tooltip-info:hover {
+    color: #0d6efd;
+}
+
+
+
+/* Booking Summary Sidebar */
+.booking-summary {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 16px;
+}
+
+.booking-summary-header {
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.booking-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.booking-summary-content {
+    padding: 16px;
+}
+
+.booking-dates-card {
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.nights-count {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.dates-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-column {
+    text-align: center;
+}
+
+.date {
+    margin-bottom: 4px;
+}
+
+.day {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.month {
+    font-size: 16px;
+}
+
+.day-name {
+    font-size: 14px;
+    color: #666;
+}
+
+.time {
+    font-size: 12px;
+    color: #888;
+}
+
+.date-separator {
+    font-size: 18px;
+    color: #888;
+}
+
+.booking-details-card {
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.room-summary-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.room-summary-title {
+    font-weight: 500;
+}
+
+.room-name {
+    font-weight: 600;
+}
+
+.occupancy-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.room-rate-info, .package-info, .discount-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.services-heading {
+    font-weight: 500;
+    margin: 16px 0 8px;
+    font-size: 16px;
+}
+
+.services-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted #e0e0e0;
+}
+
+.service-name {
+    color: #555;
+}
+
+.service-status {
+    color: #888;
+}
+
+.service-price {
+    font-weight: 500;
+}
+
+.service-detail {
+    margin-top: -8px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    font-size: 12px;
+}
+
+.no-services {
+    color: #888;
+    font-style: italic;
+}
+
+.price-summary {
+    margin-top: 16px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 16px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.price-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.price-value {
+    font-weight: 500;
+}
+
+.booking-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.total-label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.total-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e75788;
+}
+
+.booking-actions {
+    margin-top: 16px;
+}
+
+.booking-summary-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    color: #495057;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.booking-summary-btn:hover {
+    background-color: #dee2e6;
+}
+
+.quantity-label {
+    display: inline-block;
+    font-size: 12px;
+    background-color: #f0f0f0;
+    color: #666;
+    border-radius: 3px;
+    padding: 2px 6px;
+    margin-left: 6px;
+}
+
+/* Payment Method Styles */
+.payment-methods-container {
+    margin-bottom: 20px;
+}
+
+.payment-method-option {
+    position: relative;
+}
+
+.payment-radio {
+    position: absolute;
+    opacity: 0;
+}
+
+.payment-method-label {
+    display: block;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-radio:checked + .payment-method-label {
+    border-color: #e83e8c;
+    background-color: #fdf5f8;
+}
+
+.payment-method-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-method-left {
+    flex-grow: 1;
+}
+
+.payment-method-right {
+    min-width: 150px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.payment-method-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.payment-method-description {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.payment-details {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.payment-list {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.payment-method-logos {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.payment-logo {
+    height: 24px;
+    width: auto;
+}
+
+.payment-amount {
+    text-align: right;
+}
+
+.payment-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.payment-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.payment-processor {
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navigation-header {
+        flex-direction: column;
+        padding: 12px;
+    }
+    
+    .back-btn {
+        margin-bottom: 12px;
+    }
+    
+    .booking-step {
+        margin-top: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .form-section {
+        padding: 16px;
+    }
+    
+    .booking-summary {
+        margin-top: 24px;
+        position: static;
+    }
+}

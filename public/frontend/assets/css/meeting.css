@@ -1,0 +1,138 @@
+/* MEETING START */
+.meeting-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: var(--bg-light);
+}
+
+/* Section Title */
+.meeting-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #e75788;
+}
+
+.meeting-section p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: tl-fadeInUp 1s ease 0.2s;
+  animation-fill-mode: both;
+}
+
+/* Meeting Option Cards */
+.meeting-option {
+  background-color: #f9d7e3;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  height: 100%;
+}
+
+.meeting-option:hover {
+    transform: translateY(-5px);
+}
+
+.meeting-option h3 {
+    font-weight: bold;
+    color: #e75788;
+    margin-bottom: 1rem;
+}
+
+.meeting-option ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.meeting-option ul li {
+  padding: 0.3rem 0;
+}
+
+.meeting-option ul li::before {
+  content: '• ';
+  color: #e75788;
+  font-weight: bold;
+}
+
+/* Meeting Image */
+.meeting-img {
+    width: 100%;
+    border-radius: 20px;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  padding: 25px;
+}
+
+/* Room Card Styles */
+.room-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 3rem;
+    transition: all 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.room-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.room-description {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.price-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .meeting-option {
+        padding: 1.5rem 1rem;
+    }
+
+    .room-card {
+        padding: 1.2rem;
+    }
+
+    .room-title {
+        font-size: 1.2rem;
+    }
+
+    .price-amount {
+        font-size: 1.3rem;
+    }
+}
+/* MEETING END */

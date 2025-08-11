@@ -1,0 +1,660 @@
+:root {
+    --pink-primary: #e91e63;
+    --pink-secondary: #f06292;
+    --pink-light: #fce4ec;
+    --pink-dark: #ad1457;
+    --pink-gradient: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    --pink-gradient-light: linear-gradient(135deg, #f06292 0%, #e91e63 100%);
+    --pink-gradient-soft: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+}
+
+/* ============================================
+   GLOBAL IMPROVEMENTS (ALL PAGES)
+============================================ */
+
+/* Page Content - NORMAL WIDTH FOR ALL PAGES */
+.page-content {
+    padding: 1rem 2rem 50rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 10px  !important;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%) !important;
+    min-height: 100vh !important;
+}
+
+/* Card Improvements */
+.card {
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 1.5rem !important;
+    background: white !important;
+}
+
+.card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+}
+
+.card-body {
+    padding: 1.5rem !important;
+    background: white !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+/* ============================================
+   BREADCRUMB IMPROVEMENTS
+============================================ */
+
+.page-breadcrumb {
+    background: white !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important;
+    margin-bottom: 1.5rem !important;
+    border: none !important;
+}
+
+.breadcrumb-title {
+    color: var(--pink-dark) !important;
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+}
+
+.breadcrumb {
+    margin: 0 !important;
+    background: transparent !important;
+}
+
+.breadcrumb-item a {
+    color: var(--pink-primary) !important;
+    text-decoration: none !important;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d !important;
+}
+
+/* ============================================
+   BUTTONS (ALL PAGES)
+============================================ */
+
+/* Primary Buttons */
+.btn-primary {
+    background: var(--pink-gradient) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1.5rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: var(--pink-gradient-light) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3) !important;
+    color: white !important;
+}
+
+/* Success Buttons */
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #34ce57 100%) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: white !important;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #218838 0%, #28a745 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3) !important;
+    color: white !important;
+}
+
+/* Danger Buttons */
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #e55a6a 100%) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: white !important;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #c82333 0%, #dc3545 100%) !important;
+    transform: translateY(-2px) !important;
+    color: white !important;
+}
+
+/* ============================================
+   GENERAL TABLE STYLING (ALL PAGES)
+============================================ */
+
+/* Default table styling for ALL pages */
+.table-responsive {
+    border-radius: 12px !important;
+    overflow: auto !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+    background: white !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+.table {
+    margin: 0 !important;
+    background: white !important;
+    font-size: 0.875rem !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    /* NO FIXED WIDTH FOR GENERAL TABLES */
+}
+
+/* Table Header - Pink Theme */
+.table thead th {
+    background: var(--pink-gradient) !important;
+    color: white !important;
+    border: none !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    padding: 1rem 0.75rem !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* Table Body */
+.table tbody td {
+    padding: 0.875rem 0.75rem !important;
+    vertical-align: middle !important;
+    border-color: #f0f0f0 !important;
+    border-bottom: 1px solid #e9ecef !important;
+    background: white !important;
+}
+
+.table tbody tr:hover {
+    background: rgba(233, 30, 99, 0.05) !important;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #f9f9f9 !important;
+}
+
+.table tbody tr:nth-child(even):hover {
+    background: rgba(233, 30, 99, 0.08) !important;
+}
+
+/* ============================================
+   FORMS (ALL PAGES)
+============================================ */
+
+.form-control,
+.form-select {
+    border: 2px solid #e9ecef !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+    transition: all 0.3s ease !important;
+    background: white !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--pink-primary) !important;
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.15) !important;
+    background: white !important;
+}
+
+.form-label {
+    color: var(--pink-dark) !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* ============================================
+   BADGES (ALL PAGES)
+============================================ */
+
+.badge {
+    border-radius: 6px !important;
+    padding: 0.375rem 0.75rem !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+}
+
+.badge.bg-success {
+    background: linear-gradient(135deg, #28a745 0%, #34ce57 100%) !important;
+    color: white !important;
+}
+
+.badge.bg-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ffcd3a 100%) !important;
+    color: #212529 !important;
+}
+
+.badge.bg-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #e55a6a 100%) !important;
+    color: white !important;
+}
+
+.badge.bg-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #3dd5f3 100%) !important;
+    color: white !important;
+}
+
+.badge.bg-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #8a9297 100%) !important;
+    color: white !important;
+}
+
+/* ============================================
+   BOOKING PAGE SPECIFIC STYLES
+   (ONLY APPLIES TO BOOKING PAGES)
+============================================ */
+
+/* Target ONLY booking page URLs */
+body[data-page="bookings"] .table,
+[href*="bookings"] ~ * .table,
+.page-content:has([href*="bookings"]) .table {
+    min-width: 1200px !important;
+    table-layout: fixed !important;
+}
+
+/* More specific targeting for booking tables */
+.table:has(th:contains("BOOKING ID")),
+.table:has(th:contains("Booking ID")),
+.table:has(th:contains("Guest Name")),
+table[data-table="bookings"] {
+    min-width: 1200px !important;
+    table-layout: fixed !important;
+}
+
+/* Booking table specific column widths */
+.table:has(th:contains("BOOKING ID")) thead th:nth-child(1),
+.table:has(th:contains("Booking ID")) thead th:nth-child(1) { width: 140px !important; }
+
+.table:has(th:contains("BOOKING ID")) thead th:nth-child(2),
+.table:has(th:contains("Booking ID")) thead th:nth-child(2) { width: 120px !important; }
+
+.table:has(th:contains("BOOKING ID")) thead th:nth-child(3),
+.table:has(th:contains("Booking ID")) thead th:nth-child(3) { width: 200px !important; }
+
+.table:has(th:contains("BOOKING ID")) thead th:nth-child(4),
+.table:has(th:contains("Booking ID")) thead th:nth-child(4) { width: 180px !important; }
+
+.table:has(th:contains("BOOKING ID")) thead th:nth-child(5),
+.table:has(th:contains("Booking ID")) thead th:nth-child(5) { width: 140px !important; }
+
+.table:has(th:contains("BOOKING ID")) thead th:nth-child(6),
+.table:has(th:contains("Booking ID")) thead th:nth-child(6) { width: 120px !important; }
+
+.table:has(th:contains("BOOKING ID")) thead th:nth-child(7),
+.table:has(th:contains("Booking ID")) thead th:nth-child(7) { width: 100px !important; }
+
+.table:has(th:contains("BOOKING ID")) thead th:nth-child(8),
+.table:has(th:contains("Booking ID")) thead th:nth-child(8) { width: 120px !important; }
+
+.table:has(th:contains("BOOKING ID")) thead th:nth-child(9),
+.table:has(th:contains("Booking ID")) thead th:nth-child(9) { width: 80px !important; }
+
+/* ============================================
+   ROOM TYPE PAGE SPECIFIC - COMPACT TABLE
+============================================ */
+
+/* Target room type tables specifically */
+.table:has(th:contains("NO.")),
+.table:has(th:contains("IMAGE")),
+.table:has(th:contains("NAME")) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: auto !important;
+    table-layout: auto !important;
+}
+
+/* Room type table column widths */
+.table:has(th:contains("NO.")) thead th:nth-child(1) { width: 60px !important; }
+.table:has(th:contains("IMAGE")) thead th:nth-child(2) { width: 120px !important; }
+.table:has(th:contains("NAME")) thead th:nth-child(3) { width: auto !important; }
+.table:has(th:contains("ACTION")) thead th:nth-child(4) { width: 160px !important; }
+
+/* Room type table body adjustments */
+.table:has(th:contains("NO.")) tbody td {
+    padding: 0.75rem 0.5rem !important;
+    text-align: center !important;
+}
+
+.table:has(th:contains("NO.")) tbody td:nth-child(1) {
+    text-align: center !important;
+    font-weight: 600 !important;
+    color: var(--pink-dark) !important;
+}
+
+.table:has(th:contains("NO.")) tbody td:nth-child(2) {
+    text-align: center !important;
+}
+
+.table:has(th:contains("NO.")) tbody td:nth-child(3) {
+    text-align: left !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+}
+
+.table:has(th:contains("NO.")) tbody td:nth-child(4) {
+    text-align: center !important;
+}
+
+/* ============================================
+   IMAGE STYLING IN TABLES
+============================================ */
+
+.table img {
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    max-width: 80px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.table img:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+}
+
+/* ============================================
+   ACTION BUTTONS IN TABLES
+============================================ */
+
+.table .btn-sm {
+    padding: 0.375rem 0.75rem !important;
+    font-size: 0.8rem !important;
+    border-radius: 6px !important;
+    margin: 0 0.25rem !important;
+    font-weight: 500 !important;
+}
+
+.table .btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #34ce57 100%) !important;
+}
+
+.table .btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #e55a6a 100%) !important;
+}
+
+/* ============================================
+   PAGINATION (ALL PAGES)
+============================================ */
+
+.pagination {
+    justify-content: center !important;
+    margin-top: 2rem !important;
+}
+
+.pagination .page-link {
+    color: var(--pink-primary) !important;
+    border: 2px solid #e9ecef !important;
+    border-radius: 8px !important;
+    margin: 0 2px !important;
+    padding: 0.5rem 0.75rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.pagination .page-link:hover {
+    background: var(--pink-primary) !important;
+    border-color: var(--pink-primary) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--pink-gradient) !important;
+    border-color: var(--pink-primary) !important;
+    color: white !important;
+}
+
+/* ============================================
+   MODAL IMPROVEMENTS (ALL PAGES)
+============================================ */
+
+.modal-header {
+    background: var(--pink-gradient) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.modal-header .modal-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.modal-header .btn-close {
+    filter: invert(1) !important;
+}
+
+.modal-content {
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2) !important;
+}
+
+.modal-body {
+    padding: 1.5rem !important;
+}
+
+.modal-footer {
+    border: none !important;
+    padding: 1rem 1.5rem !important;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+============================================ */
+
+@media (max-width: 1400px) {
+    .table {
+        font-size: 0.8rem !important;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 0.75rem 0.5rem !important;
+    }
+    
+    /* Booking table specific responsive */
+    .table:has(th:contains("BOOKING ID")) {
+        min-width: 1100px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .table {
+        font-size: 0.75rem !important;
+    }
+    
+    /* Booking table specific responsive */
+    .table:has(th:contains("BOOKING ID")) {
+        min-width: 1000px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .page-content {
+        padding: 0.5rem !important;
+    }
+    
+    .table {
+        font-size: 0.7rem !important;
+    }
+    
+    .card-body {
+        padding: 1rem !important;
+    }
+    
+    /* Booking table specific responsive */
+    .table:has(th:contains("BOOKING ID")) {
+        min-width: 900px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.65rem !important;
+    }
+    
+    .badge {
+        font-size: 0.6rem !important;
+        padding: 0.2rem 0.4rem !important;
+    }
+    
+    /* Booking table specific responsive */
+    .table:has(th:contains("BOOKING ID")) {
+        min-width: 800px !important;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+============================================ */
+
+.text-pink {
+    color: var(--pink-primary) !important;
+}
+
+.bg-pink {
+    background: var(--pink-gradient) !important;
+    color: white !important;
+}
+
+.border-pink {
+    border-color: var(--pink-primary) !important;
+}
+
+/* ============================================
+   SPECIFIC OVERRIDES FOR NON-BOOKING PAGES
+============================================ */
+
+/* Ensure non-booking tables stay compact */
+.table:not(:has(th:contains("BOOKING ID"))):not(:has(th:contains("Booking ID"))) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: auto !important;
+    table-layout: auto !important;
+}
+
+/* Force room type and other admin tables to be compact */
+.page-content:not(:has([href*="bookings"])) .table {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: auto !important;
+    table-layout: auto !important;
+}
+
+/* ============================================
+   SIMPLE STATISTICS CARDS VISIBILITY FIX
+   ADD THIS TO: public/backend/assets/css/custom.css
+   HANYA UNTUK MEMPERBAIKI CARDS YANG TIDAK TERLIHAT
+============================================ */
+
+/* Force visibility untuk cards statistics */
+.col-12.col-lg-3 .card.bg-primary,
+.col-12.col-lg-3 .card.bg-success,
+.col-12.col-lg-3 .card.bg-info,
+.col-12.col-lg-3 .card.bg-warning {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100px !important;
+}
+
+/* Force visibility untuk card body */
+.col-12.col-lg-3 .card.bg-primary .card-body,
+.col-12.col-lg-3 .card.bg-success .card-body,
+.col-12.col-lg-3 .card.bg-info .card-body,
+.col-12.col-lg-3 .card.bg-warning .card-body {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 1.5rem !important;
+}
+
+/* Force visibility untuk d-flex container */
+.col-12.col-lg-3 .card .d-flex.align-items-center {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Force visibility untuk text elements */
+.col-12.col-lg-3 .card .text-white,
+.col-12.col-lg-3 .card .text-dark {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: inherit !important;
+}
+
+/* Force visibility untuk paragraphs dan headings */
+.col-12.col-lg-3 .card p,
+.col-12.col-lg-3 .card h4 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+}
+
+/* Force visibility untuk icons */
+.col-12.col-lg-3 .card .ms-auto,
+.col-12.col-lg-3 .card .bx,
+.col-12.col-lg-3 .card i {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Force visibility untuk columns */
+.col-12.col-lg-3 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Backup untuk semua child elements dalam cards */
+.col-12.col-lg-3 .card * {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Override any possible hiding from other CSS */
+.card.bg-primary,
+.card.bg-success, 
+.card.bg-info,
+.card.bg-warning {
+    display: block !important;
+}
+
+/* Fix untuk flexbox yang mungkin bermasalah */
+.row .col-12.col-lg-3 {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    padding: 10px 20px 30px 40px !important;
+}
+
+@media (min-width: 992px) {
+    .row .col-12.col-lg-3 {
+        flex: 0 0 25% !important;
+        width: 25% !important;
+    }
+}

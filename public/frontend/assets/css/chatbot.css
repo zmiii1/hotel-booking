@@ -1,0 +1,27 @@
+/* Custom styling untuk chatbot */
+.rw-conversation-container {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.rw-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.rw-message {
+    margin-bottom: 10px;
+}
+
+.rw-reply {
+    background-color: #f1f3f4;
+    border-radius: 18px;
+    padding: 8px 12px;
+}
+
+.rw-response {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 18px;
+    padding: 8px 12px;
+}

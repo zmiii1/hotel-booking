@@ -1,0 +1,795 @@
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* background: linear-gradient(135deg, rgba(255, 200, 221, 0.8) 0%, rgba(255, 160, 200, 0.8) 100%), */
+    background-image: url('../img/bg-img.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: -0.02em;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.scroll-indicator::after {
+    content: '↓';
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Main Content */
+.main-content {
+    background: white;
+    position: relative;
+    z-index: 3;
+    border-radius: 3rem 3rem 0 0;
+    margin-top: -3rem;
+    padding-top: 4rem;
+}
+
+/* Section Styling */
+.section {
+    padding: 5rem 0;
+    margin-bottom: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    text-align: center !important;
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff8ab0, #ff5c9f);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Activity Cards Grid - 2x2 Layout */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    justify-items: center;
+}
+
+.activity-card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff8ab0, #ff5c9f);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
+}
+
+.activity-card:hover::before {
+    transform: scaleX(1);
+}
+
+.activity-badge {
+    background: linear-gradient(135deg, #ff8ab0, #ff5c9f);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.activity-duration {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.activity-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff6b9d;
+    margin-bottom: 1rem;
+}
+
+.activity-desc {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Golf Section - Fixed Layout */
+.golf-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    justify-items: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.golf-card {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+    border-radius: 2rem;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.golf-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transform: rotate(45deg) translate(-50%, -50%);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.golf-card:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(-30%, -30%);
+}
+
+.golf-card:hover {
+    border-color: rgba(102, 126, 234, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.1);
+}
+
+.golf-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff8ab0, #ff5c9f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.golf-main {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.golf-desc {
+    color: #666;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    flex-grow: 1;
+}
+
+.golf-btn {
+    background: linear-gradient(135deg, #ff8ab0, #ff5c9f);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.golf-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.golf-btn:hover::before {
+    left: 100%;
+}
+
+.golf-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Water Activities */
+/* CSS untuk Water Activities Section */
+.water-activity-image {
+    width: 100%;
+    height: 150px; /* Tinggi tetap untuk konsistensi */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.water-activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar akan memenuhi container tanpa distorsi */
+    object-position: center; /* Posisi gambar di tengah */
+    transition: transform 0.3s ease;
+}
+
+.water-activity-card:hover .water-activity-image img {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* CSS untuk Trip Packages Section */
+.package-image {
+    width: 100%;
+    height: 200px; /* Tinggi tetap untuk konsistensi */
+    overflow: hidden;
+    border-radius: 12px 12px 0 0; /* Border radius hanya di bagian atas */
+    position: relative;
+}
+
+.package-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar akan memenuhi container tanpa distorsi */
+    object-position: center; /* Posisi gambar di tengah */
+    transition: transform 0.3s ease;
+}
+
+.package-card:hover .package-image img {
+    transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* Memastikan card memiliki ukuran yang konsisten */
+.water-activity-card {
+    flex: 0 0 auto;
+    width: 250px; /* Lebar tetap */
+    min-height: 220px; /* Tinggi minimum */
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card {
+    flex: 0 0 auto;
+    width: 320px; /* Lebar tetap */
+    min-height: 350px; /* Tinggi minimum */
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.water-activity-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .water-activity-image {
+        height: 120px;
+    }
+    
+    .package-image {
+        height: 160px;
+    }
+    
+    .water-activity-card {
+        width: 200px;
+        min-height: 180px;
+    }
+    
+    .package-card {
+        width: 280px;
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .water-activity-image {
+        height: 100px;
+    }
+    
+    .package-image {
+        height: 140px;
+    }
+    
+    .water-activity-card {
+        width: 180px;
+        min-height: 160px;
+        padding: 12px;
+    }
+    
+    .package-card {
+        width: 260px;
+        min-height: 280px;
+    }
+}
+
+.water-section .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.water-section {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(118, 75, 162, 0.02));
+    border-radius: 3rem;
+    padding: 4rem 2rem;
+    margin: 4rem auto;
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.water-section .section-header {
+    text-align: center !important;
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+.water-section .section-title {
+    text-align: center !important;
+    width: 100%;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.water-section .section-subtitle {
+    text-align: center !important;
+    margin: 0 auto;
+}
+
+/* Water Activities - 2x2 Layout */
+.water-activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    justify-items: center;
+    width: 100%;
+}
+
+.water-activity-card {
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.water-activity-card:hover {
+    transform: translateY(-10px);
+}
+
+.water-activity-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #ff8ab0, #ff5c9f);
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.water-activity-label {
+    background: linear-gradient(135deg, #ff8ab0, #ff5c9f);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    display: inline-block;
+    transform: translateY(-0.5rem);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #ff8ab0, #ff5c9f);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;                    
+    border-radius: 2rem;                     
+    font-size: 1rem;                         
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;                    
+    margin: 1.5rem auto 0 auto;               
+    display: inline-block;                    
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3); 
+    text-align: center;
+    text-decoration: none;                    
+    width: auto;                              
+    min-width: 200px;                         
+    max-width: 280px;  
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+/* Trip Packages */
+.packages-scroll {
+    overflow-x: auto;
+    padding: 2rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.packages-grid {
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 1rem;
+    min-width: max-content;
+}
+
+.package-card {
+    min-width: 320px;
+    background: white;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.package-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 70px rgba(102, 126, 234, 0.15);
+}
+
+.package-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #ff8ab0, #ff5c9f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.package-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.1) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.package-card:hover .package-image::before {
+    transform: translateX(100%);
+}
+
+.package-content {
+    padding: 2rem;
+}
+
+.package-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.package-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff6b9d;
+    margin-bottom: 1.5rem;
+}
+
+.package-btn {
+    background: transparent;
+    color: #ff6b9d;
+    border: 2px solid #ff6b9d;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.package-btn:hover {
+    background: #ff6b9d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    /* Change to 1 column on mobile */
+    .activities-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        max-width: 400px;
+    }
+    
+    .water-activities-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        max-width: 350px;
+        margin: 0 auto 3rem auto;
+    }
+    
+    .activity-card {
+        max-width: 100%;
+    }
+    
+    .water-activity-card {
+        max-width: 100%;
+    }
+    
+    .golf-cards {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    
+    .packages-grid {
+        padding: 0 1rem;
+    }
+    
+    .package-card {
+        min-width: 280px;
+    }
+    
+    .golf-card {
+        max-width: 100%;
+    }
+    
+    .water-section {
+        padding: 3rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .activities-grid {
+        gap: 1.5rem;
+        max-width: 320px;
+    }
+    
+    .water-activities-grid {
+        gap: 1.5rem;
+        max-width: 300px;
+        margin: 0 auto 3rem auto;
+    }
+    
+    .golf-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .water-section {
+        padding: 2rem 1rem;
+    }
+    
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Scrollbar Styling */
+.packages-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.packages-scroll::-webkit-scrollbar-track {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+}
+
+.packages-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #ff8ab0, #ff5c9f);
+    border-radius: 10px;
+}

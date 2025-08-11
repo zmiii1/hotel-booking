@@ -1,0 +1,423 @@
+/* HOTEL GROUP ROOM FIELDS */
+/* ===== [START] TANJUNG LESUNG PAGE SPECIFIC STYLES ===== */
+/* Hero Section */
+.tl-hero-section {
+  position: relative;
+  height: 100vh;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.tl-about-image {
+  width: 100%;
+  height: 400px; /* Tambahkan tinggi agar background terlihat */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* PERSONALISASI UNTUK SETIAP HOTEL */
+
+/* Hero Section - Specific backgrounds for each hotel */
+.tl-hero-section.tlresort {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/bg-img2.jpg') center/cover;
+}
+
+.tl-hero-section.kalicaav {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/kalicaa.jpg') center/cover;
+}
+
+.tl-hero-section.lbv {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/lbv.png') center/cover;
+}
+
+.tl-hero-section.lalassabc {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/lalassa.jpg') center/cover;
+}
+
+/* About Image - Specific backgrounds for each hotel */
+.tl-about-image.tlresort {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/pangrango.jpg') center/cover no-repeat;
+}
+
+.tl-about-image.kalicaav {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/pangrango.jpg') center/cover no-repeat;
+}
+
+.tl-about-image.lbv {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/dkolecer.jpg') center/cover no-repeat;
+}
+
+.tl-about-image.lalassabc {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/candini.JPG') center/cover no-repeat;
+}
+
+
+.tl-hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: tl-fadeInUp 1s ease;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.tl-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: tl-fadeInUp 1s ease 0.2s;
+  animation-fill-mode: both;
+}
+
+/* About Section */
+.tl-about-section {
+  padding: 5rem 0;
+  background-color: var(--bg-light);
+}
+
+.tl-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+}
+
+.tl-about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.tl-about-text h3 {
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.tl-about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.tl-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Room Types Section */
+.tl-rooms-section {
+  padding: 5rem 0;
+  background-color: var(--bg-light);
+}
+
+.tl-room-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+}
+
+.tl-room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.tl-room-image-wrapper {
+  position: relative;
+  flex: 1;
+  height: 400px;
+  overflow: hidden;
+}
+
+.tl-room-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.tl-slider-container {
+  position: relative;
+  height: 100%;
+}
+
+.tl-slides {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.tl-room-image {
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.tl-room-image.active {
+  opacity: 1;
+}
+
+.tl-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 150%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.tl-slider-arrow:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.tl-slider-arrow.prev {
+  left: 15px;
+}
+
+.tl-slider-arrow.next {
+  right: 15px;
+}
+
+.tl-room-info {
+  flex: 1;
+  padding: 3rem;
+}
+
+.tl-room-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.tl-room-description {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.tl-room-features {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.tl-feature-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.tl-feature-badge:hover {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Facilities Section */
+.tl-facilities-section {
+  padding: 5rem 0;
+  background-color: var(--bg-light);
+}
+
+.tl-facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.tl-facility-card {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.tl-facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.tl-facility-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.tl-view-more-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+.tl-view-more-btn:hover {
+  background: linear-gradient(135deg, #D81B60, #E91E63);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+  color: white;
+}
+
+/* Reverse layout for odd items */
+.tl-room-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Facilities Section */
+.facilities-section {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.facility-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.facility-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.facility-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+}
+
+
+/* Animations */
+@keyframes tl-fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tl-hero-content h1 {
+      font-size: 2.5rem;
+  }
+
+  .tl-room-card {
+      flex-direction: column !important;
+      text-align: center;
+  }
+
+  .tl-room-card.reverse {
+      flex-direction: column !important;
+  }
+
+  .tl-room-image-wrapper {
+      height: 300px;
+  }
+
+  .tl-room-info {
+      padding: 2rem;
+  }
+
+  .tl-room-name {
+      font-size: 1.5rem;
+  }
+
+  .tl-room-features {
+      justify-content: center;
+  }
+
+  .tl-slides {
+      height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tl-hero-content h1 {
+      font-size: 2rem;
+  }
+
+  .tl-section-title {
+      font-size: 2rem;
+  }
+
+  .tl-room-info {
+      padding: 1.5rem;
+  }
+
+  .tl-feature-badge {
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+  }
+}
+/* ===== [END] TANJUNG LESUNG PAGE SPECIFIC STYLES ===== */
+/* HOTEL GROUP ROOM END */

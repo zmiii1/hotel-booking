@@ -1,0 +1,159 @@
+.booking-confirmation {
+    background-color: #f8f9fa;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.confirmation-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.confirmation-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.confirmation-message {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.booking-reference {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-info-section {
+    margin-bottom: 20px;
+}
+
+.booking-info-section h4,
+.booking-details h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.info-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 10px;
+}
+
+.info-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.info-value {
+    font-weight: 400;
+}
+
+.room-details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.room-info h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.package-badge {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.price-details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.discount-row {
+    color: #28a745;
+}
+
+.total-row {
+    font-size: 18px;
+    font-weight: 700;
+    border-top: 2px solid #dee2e6;
+    padding-top: 12px;
+    margin-top: 6px;
+}
+
+.payment-details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff !important;
+    }
+    
+    .booking-confirmation {
+        background-color: #fff !important;
+        padding: 0 !important;
+    }
+    
+    .confirmation-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    .cta-buttons,
+    .navbar,
+    .footer {
+        display: none !important;
+    }
+    
+    .card-header {
+        background-color: #fff !important;
+        color: #000 !important;
+        border-bottom: 2px solid #000 !important;
+    }
+    
+    .badge {
+        border: 1px solid #000 !important;
+        color: #000 !important;
+        background-color: transparent !important;
+    }
+}

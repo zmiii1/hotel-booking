@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalender Dinamis Hotel dengan Harga</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome untuk ikon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .calendar-day {
+            height: 80px;
+            position: relative;
+            border: 1px solid #dee2e6;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .calendar-day:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .date-number {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+        
+        .price-tag {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .other-month {
+            opacity: 0.4;
+        }
+        
+        .unavailable {
+            background-color: #f8d7da;
+            cursor: not-allowed;
+        }
+        
+        .today {
+            background-color: #e8f4f8;
+        }
+        
+        .selected {
+            background-color: #d4edda;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        
+        .price-editor {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        
+        .price-category {
+            margin-bottom: 15px;
+        }
+        
+        /* Warna untuk kategori harga */
+        .price-low { color: #28a745; }
+        .price-med { color: #fd7e14; }
+        .price-high { color: #dc3545; }
+        
+        /* Latar belakang untuk kategori harga */
+        .bg-price-low { background-color: rgba(40, 167, 69, 0.1); }
+        .bg-price-med { background-color: rgba(253, 126, 20, 0.1); }
+        .bg-price-high { background-color: rgba(220, 53, 69, 0.1); }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Hotel Room Availability & Price</h1>
+        
+        <div class="card shadow">
+            <div class="card-body">
+                <!-- Calendar Navigation -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <button id="prevMonth" class="btn btn-outline-primary">
+                        <i class="fas fa-chevron-left"></i> Bulan Sebelumnya
+                    </button>
+                    <h3 id="currentMonth" class="m-0">April 2025</h3>
+                    <button id="nextMonth" class="btn btn-outline-primary">
+                        Bulan Berikutnya <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Calendar Grid -->
+                <div class="row text-center fw-bold mb-2">
+                    <div class="col">Min</div>
+                    <div class="col">Sen</div>
+                    <div class="col">Sel</div>
+                    <div class="col">Rab</div>
+                    <div class="col">Kam</div>
+                    <div class="col">Jum</div>
+                    <div class="col">Sab</div>
+                </div>
+                <div id="calendarGrid">
+                    <!-- Calendar days will be generated here by JavaScript -->
+                </div>
+                
+                <!-- Legend -->
+                <div class="legend mt-4">
+                    <div class="legend-item">
+                        <div class="legend-color bg-price-low"></div>
+                        <span>Harga Reguler</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color bg-price-med"></div>
+                        <span>Harga Medium</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color bg-price-high"></div>
+                        <span>Harga Tinggi</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #f8d7da;"></div>
+                        <span>Tidak Tersedia</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #e8f4f8;"></div>
+                        <span>Hari Ini</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Price Editor Section -->
+        <div class="price-editor mt-4">
+            <h4>Pengaturan Harga</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="selectedDate" class="form-label">Tanggal Terpilih</label>
+                        <input type="text" id="selectedDate" class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="priceInput" class="form-label">Harga</label>
+                        <div class="input-group">
+                            <span class="input-group-text">Rp</span>
+                            <input type="number" id="priceInput" class="form-control" placeholder="Masukkan harga">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="availabilityToggle" class="form-label">Ketersediaan</label>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="availabilityToggle" checked>
+                            <label class="form-check-label" for="availabilityToggle">Tersedia</label>
+                        </div>
+                    </div>
+                    <button id="updatePrice" class="btn btn-primary">Update Harga</button>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Atur Harga Massal</label>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">Rp</span>
+                            <input type="number" id="bulkPriceInput" class="form-control" placeholder="Masukkan harga">
+                            <button id="applyWeekends" class="btn btn-outline-secondary">Terapkan ke Akhir Pekan</button>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button id="applyWeekdays" class="btn btn-outline-secondary btn-sm">Terapkan ke Hari Kerja</button>
+                            <button id="applyMonth" class="btn btn-outline-secondary btn-sm">Terapkan ke Semua Hari Bulan Ini</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Data contoh untuk harga kamar
+        let priceData = {};
+        
+        // Mendapatkan tanggal hari ini
+        const today = new Date();
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+        let selectedDate = null;
+        
+        // Fungsi untuk menginisialisasi data harga
+        function initPriceData() {
+            // Set harga default untuk 6 bulan ke depan
+            for (let month = 0; month < 6; month++) {
+                const targetMonth = new Date(currentYear, currentMonth + month, 1);
+                const targetMonthYear = targetMonth.getFullYear();
+                const targetMonthMonth = targetMonth.getMonth();
+                const daysInMonth = new Date(targetMonthYear, targetMonthMonth + 1, 0).getDate();
+                
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dateKey = `${targetMonthYear}-${targetMonthMonth+1}-${day}`;
+                    
+                    // Harga default
+                    let defaultPrice = 850000;
+                    
+                    // Akhir pekan sedikit lebih mahal
+                    const dayOfWeek = new Date(targetMonthYear, targetMonthMonth, day).getDay();
+                    if (dayOfWeek === 0 || dayOfWeek === 6) {
+                        defaultPrice = 1000000;
+                    }
+                    
+                    // Harga lebih tinggi untuk high season (misalnya Juni-Juli)
+                    if (targetMonthMonth === 5 || targetMonthMonth === 6) {
+                        defaultPrice *= 1.2;
+                    }
+                    
+                    priceData[dateKey] = {
+                        price: Math.round(defaultPrice),
+                        available: true
+                    };
+                }
+            }
+            
+            // Simpan ke localStorage
+            saveToLocalStorage();
+        }
+        
+        // Simpan data ke localStorage
+        function saveToLocalStorage() {
+            localStorage.setItem('hotelPriceData', JSON.stringify(priceData));
+        }
+        
+        // Muat data dari localStorage
+        function loadFromLocalStorage() {
+            const savedData = localStorage.getItem('hotelPriceData');
+            if (savedData) {
+                priceData = JSON.parse(savedData);
+            } else {
+                initPriceData();
+            }
+        }
+        
+        // Fungsi untuk menghasilkan tampilan kalender
+        function generateCalendar(month, year) {
+            const calendarGrid = document.getElementById('calendarGrid');
+            calendarGrid.innerHTML = '';
+            
+            // Perbarui judul bulan
+            document.getElementById('currentMonth').textContent = new Date(year, month, 1).toLocaleDateString('id-ID', { month: 'long', year: 'numeric' });
+            
+            // Tentukan hari pertama dalam bulan (0 = Minggu, 1 = Senin, dst)
+            const firstDay = new Date(year, month, 1).getDay();
+            
+            // Jumlah hari dalam bulan
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            // Jumlah hari bulan sebelumnya
+            const daysInPrevMonth = new Date(year, month, 0).getDate();
+            
+            // Buat array untuk semua hari yang akan ditampilkan
+            let days = [];
+            
+            // Tambahkan hari dari bulan sebelumnya
+            let prevMonthStart = daysInPrevMonth - (firstDay === 0 ? 6 : firstDay - 1);
+            for (let i = prevMonthStart; i <= daysInPrevMonth; i++) {
+                const prevMonth = month === 0 ? 11 : month - 1;
+                const prevYear = month === 0 ? year - 1 : year;
+                const dateKey = `${prevYear}-${prevMonth+1}-${i}`;
+                
+                days.push({
+                    day: i,
+                    month: prevMonth,
+                    year: prevYear,
+                    currentMonth: false,
+                    dateKey: dateKey,
+                    price: priceData[dateKey]?.price || 0,
+                    available: priceData[dateKey]?.available !== false
+                });
+            }
+            
+            // Tambahkan hari dari bulan ini
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dateKey = `${year}-${month+1}-${i}`;
+                const isToday = i === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+                
+                days.push({
+                    day: i,
+                    month: month,
+                    year: year,
+                    currentMonth: true,
+                    today: isToday,
+                    dateKey: dateKey,
+                    price: priceData[dateKey]?.price || 0,
+                    available: priceData[dateKey]?.available !== false
+                });
+            }
+            
+            // Hitung berapa hari dari bulan berikutnya yang perlu ditambahkan
+            const totalSlots = Math.ceil(days.length / 7) * 7;
+            const daysFromNextMonth = totalSlots - days.length;
+            
+            // Tambahkan hari dari bulan berikutnya
+            for (let i = 1; i <= daysFromNextMonth; i++) {
+                const nextMonth = month === 11 ? 0 : month + 1;
+                const nextYear = month === 11 ? year + 1 : year;
+                const dateKey = `${nextYear}-${nextMonth+1}-${i}`;
+                
+                days.push({
+                    day: i,
+                    month: nextMonth,
+                    year: nextYear,
+                    currentMonth: false,
+                    dateKey: dateKey,
+                    price: priceData[dateKey]?.price || 0,
+                    available: priceData[dateKey]?.available !== false
+                });
+            }
+            
+            // Buat grid kalender
+            let row;
+            for (let i = 0; i < days.length; i++) {
+                if (i % 7 === 0) {
+                    row = document.createElement('div');
+                    row.className = 'row mb-2';
+                    calendarGrid.appendChild(row);
+                }
+                
+                const day = days[i];
+                const cell = document.createElement('div');
+                cell.className = 'col calendar-day';
+                
+                // Tambahkan kelas tambahan berdasarkan status hari
+                if (!day.currentMonth) {
+                    cell.classList.add('other-month');
+                }
+                if (day.today) {
+                    cell.classList.add('today');
+                }
+                if (!day.available) {
+                    cell.classList.add('unavailable');
+                }
+                
+                // Tambahkan kelas warna berdasarkan rentang harga
+                if (day.price < 900000) {
+                    cell.classList.add('bg-price-low');
+                } else if (day.price < 1100000) {
+                    cell.classList.add('bg-price-med');
+                } else {
+                    cell.classList.add('bg-price-high');
+                }
+                
+                // Set atribut tanggal untuk pengidentifikasi
+                cell.setAttribute('data-date', day.dateKey);
+                
+                // Tambahkan nomor tanggal
+                const dateNumber = document.createElement('div');
+                dateNumber.className = 'date-number';
+                dateNumber.textContent = day.day;
+                cell.appendChild(dateNumber);
+                
+                // Tambahkan harga jika tersedia
+                if (day.price && day.available) {
+                    const priceTag = document.createElement('div');
+                    priceTag.className = 'price-tag';
+                    
+                    // Format harga dengan pemisah ribuan
+                    const formattedPrice = new Intl.NumberFormat('id-ID').format(day.price);
+                    priceTag.textContent = `Rp ${formattedPrice}`;
+                    
+                    // Tambahkan kelas warna teks berdasarkan rentang harga
+                    if (day.price < 900000) {
+                        priceTag.classList.add('price-low');
+                    } else if (day.price < 1100000) {
+                        priceTag.classList.add('price-med');
+                    } else {
+                        priceTag.classList.add('price-high');
+                    }
+                    
+                    cell.appendChild(priceTag);
+                }
+                
+                // Tambahkan event listener untuk memilih tanggal
+                cell.addEventListener('click', function() {
+                    if (!day.available && !day.currentMonth) return;
+                    
+                    // Hapus kelas 'selected' dari hari yang sebelumnya dipilih
+                    const selected = document.querySelector('.calendar-day.selected');
+                    if (selected) {
+                        selected.classList.remove('selected');
+                    }
+                    
+                    // Tambahkan kelas 'selected' ke hari yang dipilih
+                    this.classList.add('selected');
+                    
+                    // Set nilai selectedDate
+                    selectedDate = day.dateKey;
+                    
+                    // Perbarui form editor
+                    document.getElementById('selectedDate').value = 
+                        new Date(day.year, day.month, day.day).toLocaleDateString('id-ID', { 
+                            weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' 
+                        });
+                    document.getElementById('priceInput').value = day.price || '';
+                    document.getElementById('availabilityToggle').checked = day.available;
+                });
+                
+                row.appendChild(cell);
+            }
+        }
+        
+        // Fungsi untuk pergi ke bulan sebelumnya
+        function prevMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        // Fungsi untuk pergi ke bulan berikutnya
+        function nextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        // Fungsi untuk memperbarui harga kamar
+        function updatePrice() {
+            if (!selectedDate) {
+                alert('Silakan pilih tanggal terlebih dahulu');
+                return;
+            }
+            
+            const price = parseInt(document.getElementById('priceInput').value);
+            const available = document.getElementById('availabilityToggle').checked;
+            
+            if (isNaN(price) || price <= 0) {
+                alert('Masukkan harga yang valid');
+                return;
+            }
+            
+            // Perbarui data harga
+            priceData[selectedDate] = {
+                price: price,
+                available: available
+            };
+            
+            // Simpan ke localStorage
+            saveToLocalStorage();
+            
+            // Perbarui tampilan kalender
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        // Fungsi untuk menerapkan harga ke akhir pekan bulan ini
+        function applyToWeekends() {
+            const price = parseInt(document.getElementById('bulkPriceInput').value);
+            
+            if (isNaN(price) || price <= 0) {
+                alert('Masukkan harga yang valid');
+                return;
+            }
+            
+            // Hitung semua akhir pekan di bulan ini
+            const firstDay = new Date(currentYear, currentMonth, 1);
+            const lastDay = new Date(currentYear, currentMonth + 1, 0);
+            
+            for (let d = new Date(firstDay); d <= lastDay; d.setDate(d.getDate() + 1)) {
+                const dayOfWeek = d.getDay();
+                if (dayOfWeek === 0 || dayOfWeek === 6) {  // 0 = Minggu, 6 = Sabtu
+                    const dateKey = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+                    
+                    // Perbarui data harga jika sudah ada, atau buat baru
+                    if (priceData[dateKey]) {
+                        priceData[dateKey].price = price;
+                    } else {
+                        priceData[dateKey] = {
+                            price: price,
+                            available: true
+                        };
+                    }
+                }
+            }
+            
+            // Simpan ke localStorage
+            saveToLocalStorage();
+            
+            // Perbarui tampilan kalender
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        // Fungsi untuk menerapkan harga ke hari kerja bulan ini
+        function applyToWeekdays() {
+            const price = parseInt(document.getElementById('bulkPriceInput').value);
+            
+            if (isNaN(price) || price <= 0) {
+                alert('Masukkan harga yang valid');
+                return;
+            }
+            
+            // Hitung semua hari kerja di bulan ini
+            const firstDay = new Date(currentYear, currentMonth, 1);
+            const lastDay = new Date(currentYear, currentMonth + 1, 0);
+            
+            for (let d = new Date(firstDay); d <= lastDay; d.setDate(d.getDate() + 1)) {
+                const dayOfWeek = d.getDay();
+                if (dayOfWeek > 0 && dayOfWeek < 6) {  // 1-5 = Senin-Jumat
+                    const dateKey = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+                    
+                    // Perbarui data harga jika sudah ada, atau buat baru
+                    if (priceData[dateKey]) {
+                        priceData[dateKey].price = price;
+                    } else {
+                        priceData[dateKey] = {
+                            price: price,
+                            available: true
+                        };
+                    }
+                }
+            }
+            
+            // Simpan ke localStorage
+            saveToLocalStorage();
+            
+            // Perbarui tampilan kalender
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        // Fungsi untuk menerapkan harga ke semua hari bulan ini
+        function applyToAllDays() {
+            const price = parseInt(document.getElementById('bulkPriceInput').value);
+            
+            if (isNaN(price) || price <= 0) {
+                alert('Masukkan harga yang valid');
+                return;
+            }
+            
+            // Hitung semua hari di bulan ini
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateKey = `${currentYear}-${currentMonth+1}-${day}`;
+                
+                // Perbarui data harga jika sudah ada, atau buat baru
+                if (priceData[dateKey]) {
+                    priceData[dateKey].price = price;
+                } else {
+                    priceData[dateKey] = {
+                        price: price,
+                        available: true
+                    };
+                }
+            }
+            
+            // Simpan ke localStorage
+            saveToLocalStorage();
+            
+            // Perbarui tampilan kalender
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        // Event listeners untuk tombol navigasi
+        document.getElementById('prevMonth').addEventListener('click', prevMonth);
+        document.getElementById('nextMonth').addEventListener('click', nextMonth);
+        
+        // Event listener untuk tombol update harga
+        document.getElementById('updatePrice').addEventListener('click', updatePrice);
+        
+        // Event listeners untuk tombol massal
+        document.getElementById('applyWeekends').addEventListener('click', applyToWeekends);
+        document.getElementById('applyWeekdays').addEventListener('click', applyToWeekdays);
+        document.getElementById('applyMonth').addEventListener('click', applyToAllDays);
+        
+        // Inisialisasi
+        document.addEventListener('DOMContentLoaded', function() {
+            // Muat data dari localStorage
+            loadFromLocalStorage();
+            
+            // Tampilkan kalender
+            generateCalendar(currentMonth, currentYear);
+        });
+    </script>
+</body>
+</html>

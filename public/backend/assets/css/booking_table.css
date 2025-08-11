@@ -1,0 +1,450 @@
+/* ================================================
+   BOOKING TABLE SPECIFIC FIXES
+   Add this to your custom.css file
+   ================================================ */
+
+/* Booking Table Container */
+.booking-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+/* Booking Table Responsive */
+.booking-table-container .table-responsive {
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Booking Table Specific Styling */
+.booking-table-container .table {
+    margin: 0;
+    background: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    min-width: 1200px; /* Force horizontal scroll on small screens */
+    table-layout: fixed; /* Fixed layout for consistent column widths */
+}
+
+/* Booking Table Headers */
+.booking-table-container .table thead th {
+    background: var(--pink-gradient) !important;
+    color: white !important;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1rem 0.75rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Column Width Specifications */
+.booking-table-container .table thead th:nth-child(1) { width: 140px; } /* Booking ID */
+.booking-table-container .table thead th:nth-child(2) { width: 120px; } /* Guest Name */
+.booking-table-container .table thead th:nth-child(3) { width: 200px; } /* Contact Info */
+.booking-table-container .table thead th:nth-child(4) { width: 180px; } /* Hotel & Room */
+.booking-table-container .table thead th:nth-child(5) { width: 140px; } /* Check-in/out */
+.booking-table-container .table thead th:nth-child(6) { width: 120px; } /* Payment Amount */
+.booking-table-container .table thead th:nth-child(7) { width: 100px; } /* Status */
+.booking-table-container .table thead th:nth-child(8) { width: 120px; } /* Created At */
+.booking-table-container .table thead th:nth-child(9) { width: 80px; }  /* Actions */
+
+/* Booking Table Body */
+.booking-table-container .table tbody td {
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #e9ecef;
+    background: white;
+    font-size: 0.875rem;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+/* Row Hover Effects */
+.booking-table-container .table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.booking-table-container .table tbody tr:hover {
+    background: rgba(233, 30, 99, 0.05) !important;
+    cursor: pointer;
+}
+
+.booking-table-container .table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.booking-table-container .table tbody tr:nth-child(even):hover {
+    background: rgba(233, 30, 99, 0.08) !important;
+}
+
+/* ================================================
+   BOOKING TABLE CELL STYLING
+   ================================================ */
+
+/* Booking ID Cell */
+.booking-id-cell {
+    text-align: center;
+}
+
+.booking-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: var(--pink-primary);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Guest Info Cell */
+.guest-info .guest-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Contact Info Cell */
+.contact-info {
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.contact-info i {
+    width: 12px;
+    text-align: center;
+}
+
+/* Hotel Info Cell */
+.hotel-info .hotel-name {
+    font-weight: 600;
+    color: var(--pink-dark);
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.hotel-info .room-type {
+    color: #6c757d;
+    font-style: italic;
+    font-size: 0.75rem;
+}
+
+/* Date Info Cell */
+.date-info {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.date-info .check-in,
+.date-info .check-out {
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.date-info .night-count {
+    font-size: 0.7rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Payment Info Cell */
+.payment-info {
+    text-align: right;
+}
+
+.payment-info .amount {
+    font-weight: 700;
+    color: #28a745;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Status Cell */
+.status-cell {
+    text-align: center;
+}
+
+/* Created Date Cell */
+.created-date {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.created-date .text-muted {
+    font-size: 0.7rem;
+}
+
+/* Actions Cell */
+.order-actions {
+    text-align: center;
+}
+
+.order-actions a {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.order-actions a:hover {
+    transform: scale(1.2);
+}
+
+/* ================================================
+   FILTER SECTION IMPROVEMENTS
+   ================================================ */
+
+.filter-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    margin-bottom: 1.5rem;
+}
+
+.filter-section .form-label {
+    font-weight: 600;
+    color: var(--pink-dark);
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.filter-section .form-control,
+.filter-section .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.filter-section .form-control:focus,
+.filter-section .form-select:focus {
+    border-color: var(--pink-primary);
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.15);
+}
+
+/* ================================================
+   RESULTS SUMMARY STYLING
+   ================================================ */
+
+.results-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    border: 1px solid #e9ecef;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* ================================================
+   PAGINATION IMPROVEMENTS
+   ================================================ */
+
+.pagination-wrapper {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    border: 1px solid #e9ecef;
+    margin-top: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.pagination .page-link {
+    color: var(--pink-primary);
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    margin: 0 2px;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.pagination .page-link:hover {
+    background: var(--pink-primary);
+    border-color: var(--pink-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--pink-gradient);
+    border-color: var(--pink-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+/* ================================================
+   RESPONSIVE IMPROVEMENTS
+   ================================================ */
+
+@media (max-width: 1400px) {
+    .booking-table-container .table {
+        min-width: 1100px;
+        font-size: 0.8rem;
+    }
+    
+    .booking-table-container .table thead th,
+    .booking-table-container .table tbody td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .booking-table-container .table {
+        min-width: 1000px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .booking-table-container .table {
+        min-width: 900px;
+        font-size: 0.7rem;
+    }
+    
+    .filter-section {
+        padding: 1rem;
+    }
+    
+    .filter-section .row > div {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-table-container .table {
+        min-width: 800px;
+        font-size: 0.65rem;
+    }
+    
+    .badge {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .results-summary,
+    .pagination-wrapper {
+        padding: 0.75rem;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* ================================================
+   EMPTY STATE STYLING
+   ================================================ */
+
+.empty-state {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.empty-state i {
+    margin-bottom: 1rem;
+}
+
+.empty-state h5 {
+    color: var(--pink-dark);
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    margin-bottom: 1.5rem;
+}
+
+/* ================================================
+   BADGE IMPROVEMENTS FOR BOOKING PAGE
+   ================================================ */
+
+.badge {
+    border-radius: 6px;
+    padding: 0.375rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.badge.bg-success {
+    background: linear-gradient(135deg, #28a745 0%, #34ce57 100%) !important;
+    color: white;
+}
+
+.badge.bg-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ffcd3a 100%) !important;
+    color: #212529;
+}
+
+.badge.bg-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #e55a6a 100%) !important;
+    color: white;
+}
+
+.badge.bg-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #3dd5f3 100%) !important;
+    color: white;
+}
+
+.badge.bg-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #8a9297 100%) !important;
+    color: white;
+}
+
+.badge.bg-primary {
+    background: var(--pink-gradient) !important;
+    color: white;
+}
+
+/* ================================================
+   MODAL IMPROVEMENTS
+   ================================================ */
+
+.modal-header {
+    background: var(--pink-gradient);
+    color: white;
+    border: none;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header .modal-title {
+    color: white;
+    font-weight: 600;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border: none;
+    padding: 1rem 1.5rem;
+}

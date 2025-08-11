@@ -1,0 +1,826 @@
+.booking-step {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    color: #666;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.step-number.completed {
+    background-color: #4caf50;
+    color: white;
+}
+
+.step-number.active {
+    background-color: #e75788;
+    color: white;
+}
+
+.step-text {
+    font-size: 14px;
+    color: #666;
+    margin-right: 8px;
+}
+
+.step-separator {
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0 8px;
+}
+
+.top-bar {
+    background: #f5f5f7;
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e5e7;
+}
+
+.booking-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.control-label {
+    font-size: 12px;
+    color: #8e8e93;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.control-input {
+    border: 1px solid #d1d1d6;
+    border-radius: 6px;
+    padding: 10px 12px;
+    background: white;
+    font-size: 14px;
+    color: #1d1d1f;
+    min-width: 160px;
+}
+
+.date-input {
+    min-width: 200px;
+}
+
+.promo-code-applied {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f2faff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #007aff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Navigation Header */
+.navigation-header {
+    background: white;
+    border-bottom: 1px solid #e5e5e7;
+}
+
+.back-btn, .continue-btn {
+    color: #b8155a;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.back-btn:hover, .continue-btn:hover {
+    color: #0d2b4d;
+    text-decoration: none;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.divider {
+    height: 4px;
+    background-color: #b8155a;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    background: #f9f9f9;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* Room Card */
+.room-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.room-header {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.room-image-container {
+    flex-shrink: 0;
+}
+
+.room-image {
+    width: 180px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.no-image {
+    width: 180px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f7;
+    color: #8e8e93;
+    border-radius: 8px;
+    font-size: 24px;
+}
+
+.room-details {
+    flex: 1;
+}
+
+.room-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #b8155a;
+}
+
+.room-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.room-specs span {
+    display: flex;
+    align-items: center;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.room-specs i {
+    margin-right: 6px;
+}
+
+.amenities-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.amenity-item {
+    background-color: #f5f5f7;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 13px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.amenity-item i {
+    margin-right: 6px;
+    font-size: 12px;
+    color: #b8155a;
+}
+
+.amenity-more {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: 500;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+}
+
+.discounted-price {
+    color: #e44d26;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.discount-label {
+    display: inline-block;
+    background-color: #e44d26;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.current-price {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Section Titles */
+/* title untuk trip package (homepage) */
+.section-title {
+  text-align: center !important;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 3rem;
+  color: #333;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ff6b9d;
+}
+
+/* Addon Cards */
+.addon-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.addon-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.addon-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.addon-card.included {
+    background-color: #edf7fa;
+    border-left: 4px solid #b8155a;
+}
+
+.addon-card.selected {
+    background-color: #f0f8ff;
+    border-left: 4px solid #007aff;
+}
+
+.addon-card-inner {
+    display: flex;
+    padding: 0;
+}
+
+.addon-image-container {
+    position: relative;
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.addon-image {
+    width: 180px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.addon-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.family-badge {
+    background-color: #e6f2ff;
+    color: #0066cc;
+}
+
+.addon-content {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.addon-header {
+    margin-bottom: 10px;
+}
+
+.included-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #b8155a;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.addon-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.prepayment-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #f5f5f7;
+    color: #6c757d;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.addon-description {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+.addon-meta {
+    margin-top: auto;
+}
+
+.guest-info {
+    display: flex;
+    align-items: center;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.guest-info i {
+    margin-right: 6px;
+}
+
+.addon-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 15px;
+    min-width: 180px;
+    background: #f9f9f9;
+}
+
+.addon-price {
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.addon-price small {
+    display: block;
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: normal;
+}
+
+.included-price {
+    color: #b8155a;
+    font-size: 1rem;
+}
+
+.addon-add {
+    width: 100%;
+}
+
+.add-btn {
+    background-color: #b8155a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 0;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+    background-color: #b8155a;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.btn-remove:hover {
+    opacity: 1;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.quantity-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #b8155a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.quantity-btn:hover {
+    background-color: #b8155a;
+}
+
+.quantity {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Booking Summary */
+.booking-summary {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 20px;
+    height: auto;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.booking-summary-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e5e5e7;
+    background: #f9f9f9;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.booking-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.booking-summary-content {
+    padding: 15px 20px;
+}
+
+.booking-dates-card {
+    background: #f5f5f7;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.room-summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.room-summary-header::after {
+    content: '\f078';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #6c757d;
+    transition: transform 0.2s;
+}
+
+.room-summary-header[aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.room-rate-info, .package-info, .discount-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-size: 14px;
+    color:#6c757d;
+}
+
+.nights-count {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.dates-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-column {
+    text-align: center;
+    flex: 1;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1;
+}
+
+.month {
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+.day-name {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.time {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.date-separator {
+    font-weight: 300;
+    color: #6c757d;
+    font-size: 1.5rem;
+    padding: 0 10px;
+}
+
+.booking-details-card {
+    background: #f5f5f7;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.room-summary {
+    border-bottom: 1px solid #e5e5e7;
+}
+
+.room-summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.room-summary-title {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.room-name {
+    font-weight: 500;
+}
+
+.toggle-icon {
+    font-size: 12px;
+    color: #6c757d;
+    transition: transform 0.2s;
+}
+
+.occupancy-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px dashed #e5e5e7;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.price {
+    font-weight: 500;
+    color: #333;
+    font-size: 18px;
+}
+
+.package-info {
+    padding: 15px;
+    font-size: 14px;
+    color: #6c757d;
+    border-bottom: 1px dashed #e5e5e7;
+}
+
+.services-summary {
+    padding: 15px;
+}
+
+.services-heading {
+    font-weight: 600;
+    color: #b8155a;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.services-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.service-name {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-label {
+    display: inline-block;
+    font-size: 12px;
+    padding: 1px 5px;
+    margin-left: 5px;
+    background-color: #e9ecef;
+    border-radius: 3px;
+    color: #6c757d;
+}
+
+.service-status, .service-price {
+    font-weight: 500;
+    color: #333;
+}
+
+.booking-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #e5e5e7;
+    margin-top: 15px;
+}
+
+.total-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.total-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.booking-actions {
+    margin-top: 15px;
+}
+
+.continue-booking-btn {
+    background-color: #dc1c6c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.continue-booking-btn:hover {
+    background-color: #c2185b;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .booking-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .control-input {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .room-header {
+        flex-direction: column;
+    }
+    
+    .room-image-container, .addon-image-container {
+        width: 100%;
+    }
+    
+    .room-image, .addon-image, .no-image {
+        width: 100%;
+    }
+    
+    .addon-card-inner {
+        flex-direction: column;
+    }
+    
+    .addon-actions {
+        width: 100%;
+        padding: 15px;
+        min-width: auto;
+    }
+    
+    .booking-summary {
+        margin-top: 30px;
+        position: static;
+    }
+}
+
+@media (min-width: 993px) {
+    .addon-list {
+        grid-template-columns: 1fr;
+    }
+}
